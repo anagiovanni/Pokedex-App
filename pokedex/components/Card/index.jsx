@@ -10,8 +10,8 @@ export default function Card({pokemon}) {
                 { backgroundColor: `${POKEMON_TYPE_COLORS[pokemon.Tipo[0].Nome]}`},
             ]}>
                 <View style={styles.info}>
-                    <Text style={styles.numero}>#{pokemon.numero}</Text>
-                    <Text style={styles.nome}>{pokemon.nome}</Text>
+                    <Text style={styles.numero}>#{pokemon.Numero}</Text>
+                    <Text style={styles.nome}>{pokemon.Nome}</Text>
                     <ScrollView horizontal>
                         {pokemon.Tipo.map((tipo) => (
                             <Button tipo={tipo} key={tipo.Nome} />
