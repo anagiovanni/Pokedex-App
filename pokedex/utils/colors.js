@@ -17,4 +17,4 @@ export const POKEMON_TYPE_COLORS = {
     Sombrio: "#705746",
     Aço: "#B7B7CE",
     Fada: "#D685AD",
-  }
+  } 

@@ -3,6 +3,7 @@ import { Dimensions, Image, StyleSheet, ScrollView, View } from 'react-native';
 import Button from "../components/Button";
 import Header from "../components/Header";
 import TextInfo from "../components/TextInfo";
+import { POKEMON_TYPE_COLORS } from "../utils/colors";
 
 const width = Dimensions.get("window").width;
 
@@ -13,13 +14,13 @@ export default function PokemonDetail() {
 
     return (
         <View style={styles.container}>
-            <Header 
-                tittle={`#${pokemon.Numero} - ${pokemon.Nome}`}
+            <Header
+                title={`#${pokemon.Numero} - ${pokemon.Nome}`}
                 back={true}
             />
-            <View style={[styles.card, { backgroundColor: tipos[0].cor }]}>
+            <View style={[styles.card, { backgroundColor: POKEMON_TYPE_COLORS[tipos[0].Nome] }]}>
                 <View style={styles.imageContainer}>
-                    <Image 
+                    <Image
                         source={{ uri: pokemon.Imagem }}
                         style={styles.image}
                     />
@@ -33,7 +34,7 @@ export default function PokemonDetail() {
                         justifyContent: "center",
                     }}>
                     {tipos.map((tipo) => (
-                        <Button 
+                        <Button
                             tipo={tipo}
                             key={tipo.Nome}
                             large={true}
@@ -69,6 +70,7 @@ const styles = StyleSheet.create({
     imageContainer: {
         justifyContent: "center",
         alignItems: "center",
+        maxWidth: "100%"
     },
     image: {
         width: width - 60,
@@ -76,6 +78,7 @@ const styles = StyleSheet.create({
     },
     dataContainer: {
         height: 260,
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
+        color: "#fff"
     },
 });
